@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule,
+         MatToolbarModule
+       } from '@angular/material';
 
 import { MainComponent } from './pages/main/main.component';
 import { MainHeaderComponent } from './pages/main/main-header/main-header.component';
@@ -19,7 +21,8 @@ const routes : Routes = [
   imports: [
     CommonModule,
     RouterModule.forRoot(routes),
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule
   ],
   declarations: [
     MainComponent,
@@ -27,7 +30,8 @@ const routes : Routes = [
   ],
   exports : [
     RouterModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule
   ]
 })
 export class AppRoutingModule { }

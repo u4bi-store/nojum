@@ -12,21 +12,48 @@ mat-toolbar{
             transition:all .3s ease;
 }
 
+img,
+h1,
+.mobile{
+    display: inline;
+}
+
 img{
-    display : inline;
-    width : 60px;
-    margin-top : 10px;
+    width : 40px;
+    margin-top : 25px;
 }
 
 h1{
-    display: inline;
     margin-left: 10px;
+    font-weight: 700;
+    font-size: 24px;
 }
 
-.logo-btn{
-    margin-left : 10px;
+.desktop{
+    display: none;
 }
 
-@media(min-width: 500px){
+.mobile{
+    display: block;
+}
 
+.fill-spacer{ flex : 1 1 auto; }
+
+@media(min-width: 550px){
+    .desktop{
+        display: inline;
+    }
+
+    .mobile{
+        display: none;
+    }
+
+    img{
+        width : 60px;
+        margin-top : 10px;
+    }
+    
+    h1{
+        font-size: 32px;
+    }
 }    
