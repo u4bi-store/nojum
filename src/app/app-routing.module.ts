@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material';
 
 import { MainComponent } from './pages/main/main.component';
+import { MainHeaderComponent } from './pages/main/main-header/main-header.component';
 
 const routes : Routes = [
   {
@@ -21,7 +22,8 @@ const routes : Routes = [
     MatButtonModule
   ],
   declarations: [
-    MainComponent
+    MainComponent,
+    MainHeaderComponent
   ],
   exports : [
     RouterModule,
