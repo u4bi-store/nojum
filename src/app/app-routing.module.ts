@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material';
 
 import { MainComponent } from './pages/main/main.component';
 
@@ -16,13 +17,15 @@ const routes : Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    MatButtonModule
   ],
   declarations: [
     MainComponent
   ],
   exports : [
-    RouterModule
+    RouterModule,
+    MatButtonModule
   ]
 })
 export class AppRoutingModule { }
