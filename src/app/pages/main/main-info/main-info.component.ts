@@ -158,7 +158,7 @@ export class MainInfoComponent implements OnInit {
       .add( circle, cloud, burst, burst2 )
 
       const x = window.innerWidth / 2,
-            y = 890;
+            y = 990;
       
       const coords = { x, y };
       circle.tune(coords); cloud.tune(coords);
