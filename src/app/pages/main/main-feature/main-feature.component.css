@@ -1,0 +1,29 @@
+.wrapper{
+    height: 400px;
+    color: #4a4a4a;
+    text-align: center;
+}
+
+.txt{
+    padding-top : 5px;
+    margin-top : 20px;
+}
+
+img{
+    width: 50%;
+    height: 50%;
+    margin-top : 10px;
+}
+
+button{
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom : 100px;
+    border-radius: 100px;
+    padding : 12.5px 55px;
+}
+
+@media(min-width: 550px){
+
+}
