@@ -152,7 +152,7 @@ export class MainInfoComponent implements OnInit {
     const dust1 = makeDust(-1);
     const dust2 = makeDust(1);
     
-    const timeline = new mojs.Timeline({ delay: 1000, repeat: 999 });
+    const timeline = new mojs.Timeline({ delay: 600, repeat: 999 });
     timeline
       .add( dust1.timeline, dust2.timeline )
       .add( circle, cloud, burst, burst2 )
