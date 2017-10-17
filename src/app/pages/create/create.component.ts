@@ -11,7 +11,7 @@ export class CreateComponent implements OnInit {
   constructor(public core : CoreService) { }
 
   ngOnInit() {
-      document.documentElement.scrollTop = 0;
+    
   }
 
 }
