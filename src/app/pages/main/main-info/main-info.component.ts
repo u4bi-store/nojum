@@ -40,9 +40,7 @@ export class MainInfoComponent implements OnInit {
       });
     
       parent.el.style.overflow = 'hidden';
-      // parent.el.style.border = '1px solid red';
 
-      console.log(parent.el);
       const burst = new mojs.Burst({
         parent:   parent.el,
         count:    CNT,
