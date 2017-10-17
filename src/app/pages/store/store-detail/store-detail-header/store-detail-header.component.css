@@ -1,0 +1,38 @@
+.wrapper{
+    height: 650px;
+    color: #4a4a4a;
+    text-align: center;
+}
+
+.item{
+    height: 70%;
+    margin: auto;
+    background-color: #DDDDDD;
+}
+
+.price{
+    float: left;
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    color: #313131;
+}
+
+
+.price h2{
+    font-weight: 400;
+    line-height: 110%;
+}
+.price label{
+    font-weight: 300;
+    color: #9c9c9c;
+}
+
+.price span{
+    font-weight: 400;
+    color: #F9CE00;
+}
+
+@media(min-width: 550px){
+
+}
