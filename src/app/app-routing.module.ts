@@ -25,9 +25,10 @@ import { CreateComponent } from './pages/create/create.component';
 import { SuccessComponent } from './pages/success/success.component';
 
 import { StoreComponent } from './pages/store/store.component';
-import { StoreHeaderComponent } from './pages/store/store-header/store-header.component';
-import { StoreListComponent } from './pages/store/store-list/store-list.component';
-import { StoreFooterComponent } from './pages/store/store-footer/store-footer.component';
+import { StoreMainComponent } from './pages/store/store-main/store-main.component';
+import { StoreMainHeaderComponent } from './pages/store/store-main/store-main-header/store-main-header.component';
+import { StoreMainListComponent } from './pages/store/store-main/store-main-list/store-main-list.component';
+import { StoreMainFooterComponent } from './pages/store/store-main/store-main-footer/store-main-footer.component';
 
 const routes : Routes = [
   {
@@ -43,7 +44,11 @@ const routes : Routes = [
     path : 'success', component : SuccessComponent
   },
   {
-    path : 'store', component : StoreComponent
+    path : 'store/:id', component : StoreComponent,
+      children: [
+        { path: '', redirectTo: 'main', pathMatch: 'full' },
+        { path: 'main', component: StoreMainComponent },
+      ]
   },
   {
     path : '', redirectTo : '/main', pathMatch : 'full'
@@ -74,9 +79,10 @@ const routes : Routes = [
     CreateComponent,
     SuccessComponent,
     StoreComponent,
-    StoreHeaderComponent,
-    StoreListComponent,
-    StoreFooterComponent
+    StoreMainComponent,
+    StoreMainHeaderComponent,
+    StoreMainListComponent,
+    StoreMainFooterComponent
   ],
   exports : [
     RouterModule,

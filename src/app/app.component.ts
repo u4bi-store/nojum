@@ -15,13 +15,7 @@ export class AppComponent {
     
     this.router.events
       .filter(event => event instanceof NavigationStart)
-      .subscribe((event:NavigationStart) => {
-      
-        this.routerUrl = event.url;
-        
-        console.log(this.routerUrl);
-      
-      });
+      .subscribe((event:NavigationStart) => this.routerUrl = event.url.substring(0, 6) );
 
   }
 
