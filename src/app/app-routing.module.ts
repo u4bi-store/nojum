@@ -24,6 +24,8 @@ import { CreateComponent } from './pages/create/create.component';
 
 import { SuccessComponent } from './pages/success/success.component';
 
+import { StoreComponent } from './pages/store/store.component';
+
 const routes : Routes = [
   {
     path : 'main', component : MainComponent
@@ -36,6 +38,9 @@ const routes : Routes = [
   },
   {
     path : 'success', component : SuccessComponent
+  },
+  {
+    path : 'store', component : StoreComponent
   },
   {
     path : '', redirectTo : '/main', pathMatch : 'full'
@@ -64,7 +69,8 @@ const routes : Routes = [
     MainFooterComponent,
     LoginComponent,
     CreateComponent,
-    SuccessComponent
+    SuccessComponent,
+    StoreComponent
   ],
   exports : [
     RouterModule,

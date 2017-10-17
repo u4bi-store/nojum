@@ -1,3 +1,7 @@
-.wrapper{
-    margin-top: 85px;
+.base-margin{
+    margin-top: 90px;
+}
+
+.store-margin{
+    margin-top: 60px;
 }

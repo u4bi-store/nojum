@@ -1,4 +1,11 @@
-<div class="wrapper">
-    <router-outlet></router-outlet>
+<div *ngIf="routerUrl !== '/store'">
+    <div class="base-margin"></div>
+    <app-toolbar></app-toolbar>
 </div>
-<app-toolbar></app-toolbar>
+
+<div *ngIf="routerUrl === '/store'">
+    <div class="store-margin"></div>
+    <app-store-toolbar></app-store-toolbar>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationStart } from '@angular/router';
+import 'rxjs/add/operator/filter';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  
+  public routerUrl : string; 
+  
+  constructor(private router: Router){
+    
+    this.router.events
+      .filter(event => event instanceof NavigationStart)
+      .subscribe((event:NavigationStart) => {
+      
+        this.routerUrl = event.url;
+        
+        console.log(this.routerUrl);
+      
+      });
+
+  }
+
+  ngOnInit() {
+    
+  }
+
 }
