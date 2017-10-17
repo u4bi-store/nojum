@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+
 declare var mojs : any;
 
 @Component({
@@ -32,10 +33,10 @@ export class MainFeatureComponent implements OnInit {
         fill:           [ COLORS.RED, COLORS.YELLOW, COLORS.WHITE ],
         radius:         'stagger(200, 2)',
         scale:          { .25 : 3 },
-        duration:       700,
+        duration:       600,
         delay:          'stagger(50)',
         easing:         [ 'cubic.out', 'cubic.out', 'cubic.out' ],
-        isForce3d:      true,
+        isForce3d:      true
       }
     });
     
@@ -53,7 +54,7 @@ export class MainFeatureComponent implements OnInit {
         scale: { 1.5: 0 },
         pathScale: 'rand(.5, 1)',
         degreeShift: 'rand(-360, 360)',
-        isForce3d: true,
+        isForce3d: true
       }
     });
     

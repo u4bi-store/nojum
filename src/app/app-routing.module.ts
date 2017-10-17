@@ -10,10 +10,20 @@ import { MainHeaderComponent } from './pages/main/main-header/main-header.compon
 import { MainInfoComponent } from './pages/main/main-info/main-info.component';
 import { MainFeatureComponent } from './pages/main/main-feature/main-feature.component';
 
+import { LoginComponent } from './pages/login/login.component';
+
+import { CreateComponent } from './pages/create/create.component';
+
 const routes : Routes = [
   {
     path : 'main', component : MainComponent
-  },  
+  },
+  {
+    path : 'create', component : CreateComponent
+  },
+  {
+    path : 'login', component : LoginComponent
+  },
   {
     path : '', redirectTo : '/main', pathMatch : 'full'
   }
@@ -30,7 +40,9 @@ const routes : Routes = [
     MainComponent,
     MainHeaderComponent,
     MainInfoComponent,
-    MainFeatureComponent
+    MainFeatureComponent,
+    LoginComponent,
+    CreateComponent
   ],
   exports : [
     RouterModule,
