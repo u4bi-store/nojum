@@ -3,9 +3,15 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { MatButtonModule,
          MatToolbarModule,
-         MatInputModule
+         MatInputModule,
+         MatStepperModule,
+         MatRadioModule,
+         MatListModule,
+         MatIconModule
        } from '@angular/material';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+       
 import { MainComponent } from './pages/main/main.component';
 import { MainHeaderComponent } from './pages/main/main-header/main-header.component';
 import { MainInfoComponent } from './pages/main/main-info/main-info.component';
@@ -35,9 +41,15 @@ const routes : Routes = [
   imports: [
     CommonModule,
     RouterModule.forRoot(routes),
+    FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatToolbarModule,
-    MatInputModule
+    MatInputModule,
+    MatStepperModule,
+    MatRadioModule,
+    MatListModule,
+    MatIconModule
   ],
   declarations: [
     MainComponent,
@@ -50,9 +62,15 @@ const routes : Routes = [
   ],
   exports : [
     RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatToolbarModule,
-    MatInputModule
+    MatInputModule,
+    MatStepperModule,
+    MatRadioModule,
+    MatListModule,
+    MatIconModule
   ]
 })
 export class AppRoutingModule { }

@@ -1,0 +1,28 @@
+.wrapper{
+    width: 92%;
+    max-width: 900px;
+    margin:auto;       
+    margin-top: 100px;
+}
+
+.field{
+    display: block;
+    color: #4a4a4a;
+    width: 95%;
+    max-width: 400px;
+    margin:auto;    
+}
+
+.radio-btn{
+    margin-left : 30px;
+}
+ 
+.step-btn{
+    margin-top: 40px;
+    background: #F9CE00;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 10px 10px 10px 10px;
+    font-weight: 400;
+}

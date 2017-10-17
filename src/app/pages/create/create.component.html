@@ -1,3 +1,108 @@
-<p>
-  create works!
-</p>
+<div class="wrapper">
+  
+    <mat-vertical-stepper >
+    <mat-step >
+        <form>
+        <ng-template matStepLabel>유형 선택</ng-template>
+
+        <div class="field">
+            <br>
+            <mat-radio-group>
+                <mat-radio-button class="radio-btn" color="primary" value="0">탕수육 부먹</mat-radio-button>
+                <mat-radio-button class="radio-btn"  color="primary" value="1">탕수육 찍먹</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <button class="field step-btn" mat-button matStepperNext>다음으로 이동하기</button>
+
+        </form>
+    </mat-step>
+    <mat-step>
+        <form>
+        <ng-template matStepLabel>정보 등록</ng-template>
+
+        <mat-form-field class="field">
+            <input matInput placeholder="스토어명">
+        </mat-form-field>
+
+        <mat-form-field class="field">
+            <input #domain matInput placeholder="주소( {{ domain.value }}.nojum.io )">
+        </mat-form-field>
+
+        <mat-form-field class="field">
+            <input matInput placeholder="판매자명">
+        </mat-form-field>
+
+        <button class="field step-btn" mat-button matStepperNext>다음으로 이동하기</button>
+
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>신용 인증</ng-template>
+
+        <mat-form-field class="field">
+            <input matInput placeholder="연락처(필수)">
+        </mat-form-field>
+
+        <mat-form-field class="field">
+            <input matInput placeholder="인스타그램">
+        </mat-form-field>
+
+        <mat-form-field class="field">
+            <input matInput placeholder="페이스북">
+        </mat-form-field>
+
+        <button class="field step-btn" mat-button matStepperNext>다음으로 이동하기</button>         
+
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>확인</ng-template>
+
+        <mat-list>
+
+            <h3 matSubheader>작성하신 내용이 맞으십니까?</h3>
+                          
+            <mat-list-item>
+                <mat-icon mat-list-icon>done</mat-icon>
+                <h4 matLine>유형</h4>
+                <p matLine>탕수육 부먹</p>
+            </mat-list-item>
+
+            <mat-list-item>
+                <mat-icon mat-list-icon>place</mat-icon>
+                <h4 matLine>스토어명</h4>
+                <p matLine>에이비씨디 스토어</p>
+            </mat-list-item>
+
+            <mat-list-item>
+                <mat-icon mat-list-icon>home</mat-icon>
+                <h4 matLine>스토어주소</h4>
+                <p matLine>abcd.nojum.io</p>
+            </mat-list-item>
+
+            <mat-list-item>
+                <mat-icon mat-list-icon>call</mat-icon>
+                <h4 matLine>연락처</h4>
+                <p matLine>010-1234-1234 (인증완료)</p>
+            </mat-list-item>
+
+            <mat-list-item>
+                <mat-icon mat-list-icon>aspect_ratio</mat-icon>
+                <h4 matLine>인스타그램</h4>
+                <p matLine>https://www.instagram.com/abcd</p>
+            </mat-list-item>                                                                                          
+
+            <mat-list-item>
+                <mat-icon mat-list-icon>book</mat-icon>
+                <h4 matLine>페이스북</h4>
+                <p matLine>https://www.facebook.com/123455678910</p>
+            </mat-list-item>
+
+        </mat-list>
+
+        <button class="field step-btn" mat-button matStepperNext>스토어 생성</button>                
+        
+    </mat-step>    
+    </mat-vertical-stepper>
+      
+</div>
