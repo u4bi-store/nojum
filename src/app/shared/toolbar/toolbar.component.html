@@ -8,7 +8,7 @@
     
     <div class="desktop">
         
-        <button mat-button>
+        <button mat-button (click)="this.core.onRouter('/create')">
             노점 차리기
         </button>
 
@@ -16,13 +16,13 @@
     
     <span class="fill-spacer"></span>
     
-    <div class="desktop">
+    <div class="desktop" (click)="this.core.onRouter('/login')">
         <button mat-button>
             로그인
         </button>
     </div>
 
-    <span class="mobile">
+    <span class="mobile" (click)="this.core.onRouter('/login')">
         <button mat-button>
             로그인
         </button>

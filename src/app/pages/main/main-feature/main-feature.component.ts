@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { CoreService } from '../../../providers/core.service';
 
 declare var mojs : any;
 
@@ -12,9 +13,12 @@ export class MainFeatureComponent implements OnInit {
   @ViewChild('join') 
   public join : ElementRef;
   public regist : any;
-  constructor() { }
+  constructor(public core : CoreService) { }
 
   ngOnInit() {
+    
+    const self : MainFeatureComponent = this;
+    
     const COLORS = {
       RED:      '#FD5061',
       YELLOW:   '#F9CE00',
@@ -92,6 +96,9 @@ export class MainFeatureComponent implements OnInit {
       radius:   240,
       easing: 'cubic.out',
       delay: 150,
+      onComplete (isForward, isYoyo) {
+        self.core.onRouter('/create');
+      }
     });
     
     this.regist = (e) => {
