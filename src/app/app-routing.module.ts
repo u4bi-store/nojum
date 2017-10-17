@@ -32,6 +32,10 @@ import { StoreMainListComponent } from './pages/store/store-main/store-main-list
 import { StoreMainFooterComponent } from './pages/store/store-main/store-main-footer/store-main-footer.component';
 
 import { StoreDetailComponent } from './pages/store/store-detail/store-detail.component';
+import { StoreDetailHeaderComponent } from './pages/store/store-detail/store-detail-header/store-detail-header.component';
+import { StoreDetailInfoComponent } from './pages/store/store-detail/store-detail-info/store-detail-info.component';
+import { StoreDetailShareComponent } from './pages/store/store-detail/store-detail-share/store-detail-share.component';
+import { StoreDetailReviewComponent } from './pages/store/store-detail/store-detail-review/store-detail-review.component';
 
 const routes : Routes = [
   {
@@ -87,7 +91,11 @@ const routes : Routes = [
     StoreMainHeaderComponent,
     StoreMainListComponent,
     StoreMainFooterComponent,
-    StoreDetailComponent
+    StoreDetailComponent,
+    StoreDetailHeaderComponent,
+    StoreDetailInfoComponent,
+    StoreDetailShareComponent,
+    StoreDetailReviewComponent
   ],
   exports : [
     RouterModule,
