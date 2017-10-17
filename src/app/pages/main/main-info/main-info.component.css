@@ -1,0 +1,19 @@
+.wrapper{
+    height: 450px;
+    color: #fff;
+    background-color: #6b6fde;
+    text-align: center;
+}
+
+img{
+    width: 45%;
+    height: 45%;
+}
+
+.txt{
+    padding-top : 5px;
+}
+
+@media(min-width: 550px){
+
+}

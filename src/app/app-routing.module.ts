@@ -7,6 +7,7 @@ import { MatButtonModule,
 
 import { MainComponent } from './pages/main/main.component';
 import { MainHeaderComponent } from './pages/main/main-header/main-header.component';
+import { MainInfoComponent } from './pages/main/main-info/main-info.component';
 
 const routes : Routes = [
   {
@@ -26,7 +27,8 @@ const routes : Routes = [
   ],
   declarations: [
     MainComponent,
-    MainHeaderComponent
+    MainHeaderComponent,
+    MainInfoComponent
   ],
   exports : [
     RouterModule,
