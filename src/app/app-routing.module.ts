@@ -22,6 +22,8 @@ import { LoginComponent } from './pages/login/login.component';
 
 import { CreateComponent } from './pages/create/create.component';
 
+import { SuccessComponent } from './pages/success/success.component';
+
 const routes : Routes = [
   {
     path : 'main', component : MainComponent
@@ -31,6 +33,9 @@ const routes : Routes = [
   },
   {
     path : 'login', component : LoginComponent
+  },
+  {
+    path : 'success', component : SuccessComponent
   },
   {
     path : '', redirectTo : '/main', pathMatch : 'full'
@@ -58,7 +63,8 @@ const routes : Routes = [
     MainFeatureComponent,
     MainFooterComponent,
     LoginComponent,
-    CreateComponent
+    CreateComponent,
+    SuccessComponent
   ],
   exports : [
     RouterModule,
