@@ -7,7 +7,8 @@ import { MatButtonModule,
          MatStepperModule,
          MatRadioModule,
          MatListModule,
-         MatIconModule
+         MatIconModule,
+         MatTabsModule
        } from '@angular/material';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -75,7 +76,8 @@ const routes : Routes = [
     MatStepperModule,
     MatRadioModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatTabsModule
   ],
   declarations: [
     MainComponent,
@@ -107,7 +109,8 @@ const routes : Routes = [
     MatStepperModule,
     MatRadioModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatTabsModule
   ]
 })
 export class AppRoutingModule { }
