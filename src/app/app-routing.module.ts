@@ -25,10 +25,13 @@ import { CreateComponent } from './pages/create/create.component';
 import { SuccessComponent } from './pages/success/success.component';
 
 import { StoreComponent } from './pages/store/store.component';
+
 import { StoreMainComponent } from './pages/store/store-main/store-main.component';
 import { StoreMainHeaderComponent } from './pages/store/store-main/store-main-header/store-main-header.component';
 import { StoreMainListComponent } from './pages/store/store-main/store-main-list/store-main-list.component';
 import { StoreMainFooterComponent } from './pages/store/store-main/store-main-footer/store-main-footer.component';
+
+import { StoreDetailComponent } from './pages/store/store-detail/store-detail.component';
 
 const routes : Routes = [
   {
@@ -48,6 +51,7 @@ const routes : Routes = [
       children: [
         { path: '', redirectTo: 'main', pathMatch: 'full' },
         { path: 'main', component: StoreMainComponent },
+        { path: 'detail/:id', component: StoreDetailComponent }
       ]
   },
   {
@@ -82,7 +86,8 @@ const routes : Routes = [
     StoreMainComponent,
     StoreMainHeaderComponent,
     StoreMainListComponent,
-    StoreMainFooterComponent
+    StoreMainFooterComponent,
+    StoreDetailComponent
   ],
   exports : [
     RouterModule,

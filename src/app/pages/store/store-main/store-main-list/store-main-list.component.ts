@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CoreService } from '../../../../providers/core.service';
 
 @Component({
   selector: 'app-store-main-list',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoreMainListComponent implements OnInit {
 
-  constructor() { }
+  constructor(public core : CoreService) { }
 
   ngOnInit() {
   }

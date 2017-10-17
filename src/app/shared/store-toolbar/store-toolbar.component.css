@@ -15,4 +15,5 @@ mat-toolbar{
 .title{
     margin: auto;
     color: #000;
+    cursor: pointer;
 }
