@@ -25,6 +25,9 @@ import { CreateComponent } from './pages/create/create.component';
 import { SuccessComponent } from './pages/success/success.component';
 
 import { StoreComponent } from './pages/store/store.component';
+import { StoreHeaderComponent } from './pages/store/store-header/store-header.component';
+import { StoreListComponent } from './pages/store/store-list/store-list.component';
+import { StoreFooterComponent } from './pages/store/store-footer/store-footer.component';
 
 const routes : Routes = [
   {
@@ -70,7 +73,10 @@ const routes : Routes = [
     LoginComponent,
     CreateComponent,
     SuccessComponent,
-    StoreComponent
+    StoreComponent,
+    StoreHeaderComponent,
+    StoreListComponent,
+    StoreFooterComponent
   ],
   exports : [
     RouterModule,

@@ -1,0 +1,11 @@
+.wrapper{
+    padding-top : 20px;
+    padding-bottom: 40px;
+    height: 1200px;
+    color: #4a4a4a;
+    text-align: center;
+}
+
+@media(min-width: 550px){
+
+}
