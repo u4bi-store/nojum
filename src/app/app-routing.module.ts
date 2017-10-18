@@ -33,11 +33,13 @@ import { StoreMainListComponent } from './pages/store/store-main/store-main-list
 import { StoreMainFooterComponent } from './pages/store/store-main/store-main-footer/store-main-footer.component';
 
 import { StoreDetailComponent } from './pages/store/store-detail/store-detail.component';
-import { StoreDetailHeaderComponent } from './pages/store/store-detail/store-detail-header/store-detail-header.component';
-import { StoreDetailInfoComponent } from './pages/store/store-detail/store-detail-info/store-detail-info.component';
-import { StoreDetailShareComponent } from './pages/store/store-detail/store-detail-share/store-detail-share.component';
-import { StoreDetailReviewComponent } from './pages/store/store-detail/store-detail-review/store-detail-review.component';
-import { StoreDetailInfoItemComponent } from './pages/store/store-detail/store-detail-info/store-detail-info-item/store-detail-info-item.component';
+
+import { StoreDetailMainComponent } from './pages/store/store-detail/store-detail-main/store-detail-main.component';
+import { StoreDetailMainHeaderComponent } from './pages/store/store-detail/store-detail-main/store-detail-main-header/store-detail-main-header.component';
+import { StoreDetailMainInfoComponent } from './pages/store/store-detail/store-detail-main/store-detail-main-info/store-detail-main-info.component';
+import { StoreDetailMainShareComponent } from './pages/store/store-detail/store-detail-main/store-detail-main-share/store-detail-main-share.component';
+import { StoreDetailMainReviewComponent } from './pages/store/store-detail/store-detail-main/store-detail-main-review/store-detail-main-review.component';
+import { StoreDetailMainInfoItemComponent } from './pages/store/store-detail/store-detail-main/store-detail-main-info/store-detail-main-info-item/store-detail-main-info-item.component';
 
 const routes : Routes = [
   {
@@ -57,8 +59,13 @@ const routes : Routes = [
       children: [
         { path: '', redirectTo: 'main', pathMatch: 'full' },
         { path: 'main', component: StoreMainComponent },
-        { path: 'detail/:id', component: StoreDetailComponent },
-        { path: 'detail', redirectTo: 'main', pathMatch: 'full' },
+        { path: 'detail/:id', component: StoreDetailComponent,
+          children : [
+            { path: '', redirectTo: 'main', pathMatch: 'full' },
+            { path: 'main', component: StoreDetailMainComponent }
+          ]
+        },
+        { path: 'detail', redirectTo: 'main', pathMatch: 'full' }
       ]
   },
   { path : 'store', redirectTo : 'main', pathMatch : 'full' },
@@ -96,11 +103,12 @@ const routes : Routes = [
     StoreMainListComponent,
     StoreMainFooterComponent,
     StoreDetailComponent,
-    StoreDetailHeaderComponent,
-    StoreDetailInfoComponent,
-    StoreDetailShareComponent,
-    StoreDetailReviewComponent,
-    StoreDetailInfoItemComponent
+    StoreDetailMainComponent,
+    StoreDetailMainHeaderComponent,
+    StoreDetailMainInfoComponent,
+    StoreDetailMainShareComponent,
+    StoreDetailMainReviewComponent,
+    StoreDetailMainInfoItemComponent
   ],
   exports : [
     RouterModule,
