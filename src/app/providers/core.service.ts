@@ -15,5 +15,5 @@ export class CoreService {
     document.documentElement.scrollTop = 0;
     
   }
-  
+
 }

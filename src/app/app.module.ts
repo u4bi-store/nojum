@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoreService } from './providers/core.service';
+import { ParamService } from './providers/param.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +22,8 @@ import { StoreToolbarComponent } from './shared/store-toolbar/store-toolbar.comp
     AppRoutingModule
   ],
   providers: [
-    CoreService
+    CoreService,
+    ParamService
   ],
   bootstrap: [AppComponent]
 })
