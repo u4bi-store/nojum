@@ -57,7 +57,8 @@ const routes : Routes = [
       children: [
         { path: '', redirectTo: 'main', pathMatch: 'full' },
         { path: 'main', component: StoreMainComponent },
-        { path: 'detail/:id', component: StoreDetailComponent }
+        { path: 'detail/:id', component: StoreDetailComponent },
+        { path: 'detail', redirectTo: 'main', pathMatch: 'full' },
       ]
   },
   { path : 'store', redirectTo : 'main', pathMatch : 'full' },
