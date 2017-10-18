@@ -60,9 +60,9 @@ const routes : Routes = [
         { path: 'detail/:id', component: StoreDetailComponent }
       ]
   },
-  {
-    path : '', redirectTo : '/main', pathMatch : 'full'
-  }
+  { path : 'store', redirectTo : 'main', pathMatch : 'full' },
+  { path : '', redirectTo : 'main', pathMatch : 'full' },
+  { path:'**',redirectTo:'main', pathMatch:'full' }
 ];
 
 @NgModule({
