@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoreService } from '../../providers/core.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-store-toolbar',
@@ -8,9 +9,14 @@ import { CoreService } from '../../providers/core.service';
 })
 export class StoreToolbarComponent implements OnInit {
 
-  constructor(public core : CoreService) { }
+  public storeId : number;
+
+  constructor(public core : CoreService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+
+    this.route.children[0].params.subscribe( (param: any) => this.storeId = +param['id']);
+
   }
 
 }

@@ -1,5 +1,5 @@
 <mat-toolbar>
-    <div (click)="this.core.onRouter('/store/1')" class="title">테스트 스토어</div>
-    <mat-icon (click)="this.core.onRouter('/store/1/order')">person_outline</mat-icon>
-    <mat-icon (click)="this.core.onRouter('/store/1/cart')">add_shopping_cart</mat-icon>
+    <div (click)="this.core.onRouter('/store/'+ this.storeId)" class="title">테스트 스토어</div>
+    <mat-icon (click)="this.core.onRouter('/store/' + this.storeId + '/order')">person_outline</mat-icon>
+    <mat-icon (click)="this.core.onRouter('/store/' + this.storeId + '/cart')">add_shopping_cart</mat-icon>
 </mat-toolbar>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-store',
@@ -8,13 +7,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StoreComponent implements OnInit {
 
-  public storeId: number;
-
-  constructor(private route: ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit() {
-    
-    this.route.params.subscribe(params => this.storeId = +params['id'] );
+
   }
 
 }
