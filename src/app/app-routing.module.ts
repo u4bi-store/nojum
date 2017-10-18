@@ -41,6 +41,8 @@ import { StoreDetailMainShareComponent } from './pages/store/store-detail/store-
 import { StoreDetailMainReviewComponent } from './pages/store/store-detail/store-detail-main/store-detail-main-review/store-detail-main-review.component';
 import { StoreDetailMainInfoItemComponent } from './pages/store/store-detail/store-detail-main/store-detail-main-info/store-detail-main-info-item/store-detail-main-info-item.component';
 
+import { StoreDetailBuyComponent } from './pages/store/store-detail/store-detail-buy/store-detail-buy.component';
+
 const routes : Routes = [
   {
     path : 'main', component : MainComponent
@@ -57,15 +59,18 @@ const routes : Routes = [
   {
     path : 'store/:id', component : StoreComponent,
       children: [
-        { path: '', redirectTo: 'main', pathMatch: 'full' },
         { path: 'main', component: StoreMainComponent },
         { path: 'detail/:id', component: StoreDetailComponent,
           children : [
+            { path: 'main', component: StoreDetailMainComponent },
+            { path: 'buy', component: StoreDetailBuyComponent },
             { path: '', redirectTo: 'main', pathMatch: 'full' },
-            { path: 'main', component: StoreDetailMainComponent }
+            { path:'**',redirectTo:'main', pathMatch:'full' }
           ]
         },
-        { path: 'detail', redirectTo: 'main', pathMatch: 'full' }
+        { path: 'detail', redirectTo: 'main', pathMatch: 'full' },
+        { path: '', redirectTo: 'main', pathMatch: 'full' },
+        { path:'**',redirectTo:'main', pathMatch:'full' }
       ]
   },
   { path : 'store', redirectTo : 'main', pathMatch : 'full' },
@@ -108,7 +113,8 @@ const routes : Routes = [
     StoreDetailMainInfoComponent,
     StoreDetailMainShareComponent,
     StoreDetailMainReviewComponent,
-    StoreDetailMainInfoItemComponent
+    StoreDetailMainInfoItemComponent,
+    StoreDetailBuyComponent
   ],
   exports : [
     RouterModule,
