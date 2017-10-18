@@ -11,8 +11,16 @@ mat-toolbar{
             transition:all .3s ease;
 }
 
+mat-icon{
+    font-size: 1.8rem;
+    margin-left: 10px;
+    cursor: pointer;
+    width: 30px;
+}
+
 .title{
     margin: auto;
+    padding-left: 80px;
     color: #313131;
     cursor: pointer;
 }
