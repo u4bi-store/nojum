@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CoreService } from '../../../../../providers/core.service';
 
 @Component({
   selector: 'app-store-detail-main-header',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoreDetailMainHeaderComponent implements OnInit {
 
-  constructor() { }
+  @Input() itemId : number;
+
+  constructor(public core : CoreService) { }
 
   ngOnInit() {
   }

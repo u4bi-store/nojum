@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-store-detail-main',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoreDetailMainComponent implements OnInit {
 
-  constructor() { }
+  public itemId : number;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    
+    this.route.parent.params.subscribe( (param: any) => this.itemId = +param['id'] );
+
   }
 
 }

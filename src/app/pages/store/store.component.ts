@@ -14,12 +14,7 @@ export class StoreComponent implements OnInit {
 
   ngOnInit() {
     
-    this.route.params.subscribe(params => {
-      
-      this.storeId = +params['id'];
-      console.log(this.storeId);
-    
-    });
+    this.route.params.subscribe(params => this.storeId = +params['id'] );
   }
 
 }
