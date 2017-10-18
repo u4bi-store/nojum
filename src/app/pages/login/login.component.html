@@ -4,7 +4,7 @@
         <form>
             <img class="field favicon" src="./assets/nojum_logo.svg">
             <mat-form-field class="field">
-                <input #loginPanel matInput placeholder="Email">
+                <input matInput placeholder="Email">
             </mat-form-field>
 
             <mat-form-field class="field">
@@ -12,10 +12,10 @@
             </mat-form-field>
             
             <div class="field notice">
-                <span>비밀번호를 잊으셨나요?</span>
+                <span (click)="this.core.onRouter('/reset')" >비밀번호를 잊으셨나요?</span>
             </div>
 
-            <button class="field submit" mat-button>로그인</button>
+            <button class="field submit" (click)="this.core.onRouter('/main')" mat-button>로그인</button>
 
         </form>
 

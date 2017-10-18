@@ -21,6 +21,8 @@ import { MainFooterComponent } from './pages/main/main-footer/main-footer.compon
 
 import { LoginComponent } from './pages/login/login.component';
 
+import { ResetComponent } from './pages/reset/reset.component';
+
 import { CreateComponent } from './pages/create/create.component';
 
 import { SuccessComponent } from './pages/success/success.component';
@@ -56,6 +58,9 @@ const routes : Routes = [
   },
   {
     path : 'login', component : LoginComponent
+  },
+  {
+    path : 'reset', component : ResetComponent
   },
   {
     path : 'success', component : SuccessComponent
@@ -106,6 +111,7 @@ const routes : Routes = [
     MainFeatureComponent,
     MainFooterComponent,
     LoginComponent,
+    ResetComponent,
     CreateComponent,
     SuccessComponent,
     StoreComponent,
