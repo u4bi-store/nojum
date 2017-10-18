@@ -15,7 +15,11 @@ export class AppComponent {
     
     this.router.events
       .filter(event => event instanceof NavigationStart)
-      .subscribe((event:NavigationStart) => this.routerUrl = event.url.substring(0, 6) );
+      .subscribe((event:NavigationStart) => {
+        
+        if(event.url.length > 7) this.routerUrl = event.url.substring(0, 6);
+
+      });
 
   }
 
