@@ -6,10 +6,10 @@ export class ParamService {
 
   constructor(private _route : ActivatedRoute) { }
 
-  getParentParamId = () => this._route.parent.params.subscribe( (param: any) => +param['id'] );
+  getParentParam = () => this._route.parent.params;
 
-  getGrandParentParamId = () => this._route.parent.parent.params.subscribe( (param: any) => +param['id'] );
+  getGrandParentParam = () => this._route.parent.parent.params;
 
-  getChildrenParamId = () => this._route.children[0].params.subscribe( (param: any) => +param['id']);
-  
+  getChildrenParam = () => this._route.children[0].params;
+
 }
