@@ -43,6 +43,10 @@ import { StoreDetailMainInfoItemComponent } from './pages/store/store-detail/sto
 
 import { StoreDetailBuyComponent } from './pages/store/store-detail/store-detail-buy/store-detail-buy.component';
 
+import { StoreOrderComponent } from './pages/store/store-order/store-order.component';
+
+import { StoreCartComponent } from './pages/store/store-cart/store-cart.component';
+
 const routes : Routes = [
   {
     path : 'main', component : MainComponent
@@ -60,6 +64,8 @@ const routes : Routes = [
     path : 'store/:id', component : StoreComponent,
       children: [
         { path: 'main', component: StoreMainComponent },
+        { path: 'order', component: StoreOrderComponent },
+        { path: 'cart', component: StoreCartComponent },
         { path: 'detail/:id', component: StoreDetailComponent,
           children : [
             { path: 'main', component: StoreDetailMainComponent },
@@ -114,7 +120,9 @@ const routes : Routes = [
     StoreDetailMainShareComponent,
     StoreDetailMainReviewComponent,
     StoreDetailMainInfoItemComponent,
-    StoreDetailBuyComponent
+    StoreDetailBuyComponent,
+    StoreOrderComponent,
+    StoreCartComponent
   ],
   exports : [
     RouterModule,
