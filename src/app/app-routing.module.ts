@@ -37,6 +37,7 @@ import { StoreDetailHeaderComponent } from './pages/store/store-detail/store-det
 import { StoreDetailInfoComponent } from './pages/store/store-detail/store-detail-info/store-detail-info.component';
 import { StoreDetailShareComponent } from './pages/store/store-detail/store-detail-share/store-detail-share.component';
 import { StoreDetailReviewComponent } from './pages/store/store-detail/store-detail-review/store-detail-review.component';
+import { StoreDetailInfoItemComponent } from './pages/store/store-detail/store-detail-info/store-detail-info-item/store-detail-info-item.component';
 
 const routes : Routes = [
   {
@@ -97,7 +98,8 @@ const routes : Routes = [
     StoreDetailHeaderComponent,
     StoreDetailInfoComponent,
     StoreDetailShareComponent,
-    StoreDetailReviewComponent
+    StoreDetailReviewComponent,
+    StoreDetailInfoItemComponent
   ],
   exports : [
     RouterModule,

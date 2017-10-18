@@ -6,7 +6,7 @@ mat-toolbar{
     color: #4a4a4a;
     background: #fff;
     box-shadow: 0 .1px .1px rgba(0, 0, 0, 0.12), 0 0 .1px rgba(0, 0, 0, 0.4);
-    z-index: 1;
+    z-index: 2;
     -webkit-transition:all .3s ease;
     -moz-transition:all .3s ease;
             transition:all .3s ease;

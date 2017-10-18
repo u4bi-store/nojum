@@ -1,12 +1,23 @@
 .wrapper{
     padding-top : 20px;
     padding-bottom: 40px;
-    height: 150px;
+    height: 110px;
     color: #4a4a4a;
     background-color: #F2F2F2;
     text-align: center;
+    margin: auto;
 }
 
-@media(min-width: 550px){
+@media(min-width: 600px){
+    .wrapper{
+        width: 97%;
+    }
+}    
+
+@media(min-width: 992px){
+
+    .wrapper{
+        width: 992px;
+    }
 
 }

@@ -1,0 +1,38 @@
+.wrapper{
+    height: 800px;
+    text-align: left;
+    color: #313131;
+}
+
+.item{
+    height: 55%;
+    background-color: #DDDDDD;
+}
+
+.info{
+    
+}
+
+.title{
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin: 1.5rem 15px 1rem 15px;
+    word-break: keep-all;
+    line-height: 120%;
+}
+
+.text{
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 160%;
+    word-break: keep-all;
+    margin: 0 15px;
+    color: rgba(0,0,0,0.87);    
+}
+
+@media(min-width: 580px){
+    .item{
+        height: 70%;
+    }
+
+}
