@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CoreService } from '../../../../providers/core.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { CoreService } from '../../../../providers/core.service';
 })
 export class StoreMainListComponent implements OnInit {
 
+  @Input() storeId : number;
+  
   constructor(public core : CoreService) { }
 
   ngOnInit() {

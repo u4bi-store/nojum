@@ -9,13 +9,15 @@ import { ActivatedRoute } from '@angular/router';
 export class StoreDetailMainComponent implements OnInit {
 
   public itemId : number;
+  public storeId : number;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     
     this.route.parent.params.subscribe( (param: any) => this.itemId = +param['id'] );
-
+    this.route.parent.parent.params.subscribe( (param: any) => this.storeId = +param['id'] );
+    
   }
 
 }

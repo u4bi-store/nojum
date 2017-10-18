@@ -9,7 +9,8 @@ import { CoreService } from '../../../../../providers/core.service';
 export class StoreDetailMainHeaderComponent implements OnInit {
 
   @Input() itemId : number;
-
+  @Input() storeId : number;
+  
   constructor(public core : CoreService) { }
 
   ngOnInit() {
