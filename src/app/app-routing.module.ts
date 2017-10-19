@@ -51,7 +51,7 @@ import { StoreCartComponent } from './pages/store/store-cart/store-cart.componen
 
 const routes : Routes = [
   {
-    path : 'main', component : MainComponent
+    path : '', component : MainComponent
   },
   {
     path : 'create', component : CreateComponent
@@ -68,25 +68,23 @@ const routes : Routes = [
   {
     path : 'store/:id', component : StoreComponent,
       children: [
-        { path: 'main', component: StoreMainComponent },
+        { path: '', component: StoreMainComponent },
         { path: 'order', component: StoreOrderComponent },
         { path: 'cart', component: StoreCartComponent },
         { path: 'detail/:id', component: StoreDetailComponent,
           children : [
-            { path: 'main', component: StoreDetailMainComponent },
+            { path: '', component: StoreDetailMainComponent },
             { path: 'buy', component: StoreDetailBuyComponent },
-            { path: '', redirectTo: 'main', pathMatch: 'full' },
-            { path:'**',redirectTo:'main', pathMatch:'full' }
+            { path: '', redirectTo: '', pathMatch: 'full' },
+            { path:'**',redirectTo:'', pathMatch:'full' }
           ]
         },
-        { path: 'detail', redirectTo: 'main', pathMatch: 'full' },
-        { path: '', redirectTo: 'main', pathMatch: 'full' },
-        { path:'**',redirectTo:'main', pathMatch:'full' }
+        { path: 'detail', redirectTo: '', pathMatch: 'full' },
+        { path:'**',redirectTo:'', pathMatch:'full' }
       ]
   },
-  { path : 'store', redirectTo : 'main', pathMatch : 'full' },
-  { path : '', redirectTo : 'main', pathMatch : 'full' },
-  { path:'**',redirectTo:'main', pathMatch:'full' }
+  { path : 'store', redirectTo : '', pathMatch : 'full' },
+  { path:'**',redirectTo:'', pathMatch:'full' }
 ];
 
 @NgModule({
