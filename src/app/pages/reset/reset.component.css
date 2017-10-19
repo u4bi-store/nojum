@@ -21,12 +21,6 @@
     margin: auto;
 }
 
-.favicon{
-    width: 200px;
-    height: 200px;
-    margin-bottom: 25px;
-}
-
 .notice span{ font-size: .9rem; }
 .notice{
     color: #4a4a4a;
