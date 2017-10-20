@@ -10,7 +10,6 @@ import { MainFooterComponent } from './pages/main/main-footer/main-footer.compon
 import { MatButtonModule } from '@angular/material';
 
 const routes : Routes = [
-  // { path : 'main', loadChildren: './pages/main/main.module#MainModule' },
   { path : '', component : MainComponent },
   { path : 'create', loadChildren: './pages/create/create.module#CreateModule' },
   { path : 'login', loadChildren: './pages/login/login.module#LoginModule' },
