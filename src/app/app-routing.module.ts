@@ -19,8 +19,6 @@ import { MainInfoComponent } from './pages/main/main-info/main-info.component';
 import { MainFeatureComponent } from './pages/main/main-feature/main-feature.component';
 import { MainFooterComponent } from './pages/main/main-footer/main-footer.component';
 
-import { LoginComponent } from './pages/login/login.component';
-
 import { ResetComponent } from './pages/reset/reset.component';
 
 import { CreateComponent } from './pages/create/create.component';
@@ -57,7 +55,7 @@ const routes : Routes = [
     path : 'create', component : CreateComponent
   },
   {
-    path : 'login', component : LoginComponent
+    path : 'login', loadChildren: './pages/login/login.module#LoginModule'
   },
   {
     path : 'reset', component : ResetComponent
@@ -108,7 +106,6 @@ const routes : Routes = [
     MainInfoComponent,
     MainFeatureComponent,
     MainFooterComponent,
-    LoginComponent,
     ResetComponent,
     CreateComponent,
     SuccessComponent,
