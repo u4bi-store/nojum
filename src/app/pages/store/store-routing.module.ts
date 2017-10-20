@@ -29,7 +29,8 @@ import { MatButtonModule,
   MatRadioModule,
   MatListModule,
   MatIconModule,
-  MatTabsModule
+  MatTabsModule,
+  MatTooltipModule
 } from '@angular/material';
 
 const routes: Routes = [
@@ -65,7 +66,8 @@ const routes: Routes = [
     MatRadioModule,
     MatListModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    MatTooltipModule
   ],
   declarations: [
     StoreComponent,

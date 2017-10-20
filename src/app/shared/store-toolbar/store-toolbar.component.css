@@ -24,3 +24,8 @@ mat-icon{
     color: #313131;
     cursor: pointer;
 }
+
+/deep/ .mat-tooltip {
+    font-size: 1rem;
+    font-weight: 400;
+}
