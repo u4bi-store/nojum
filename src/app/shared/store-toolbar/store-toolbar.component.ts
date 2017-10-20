@@ -11,11 +11,10 @@ export class StoreToolbarComponent implements OnInit {
 
   public storeId : number;
 
-  constructor(public core : CoreService, private route: ActivatedRoute) { }
+  constructor(public core : CoreService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-
-    this.route.children[0].params.subscribe( (param: any) => this.storeId = +param['id']);
+    setTimeout( () => this.route.children[0].params.subscribe( (param: any) => this.storeId = +param['id'] ) , 150);
 
   }
 

@@ -9,6 +9,12 @@ import { AppComponent } from './app.component';
 import { ToolbarComponent } from './shared/toolbar/toolbar.component';
 import { StoreToolbarComponent } from './shared/store-toolbar/store-toolbar.component';
 
+import {
+  MatButtonModule,
+  MatToolbarModule,
+  MatIconModule
+} from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +24,10 @@ import { StoreToolbarComponent } from './shared/store-toolbar/store-toolbar.comp
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [
     CoreService
