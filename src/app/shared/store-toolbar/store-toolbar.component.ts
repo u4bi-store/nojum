@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { CoreService } from '../../providers/core.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -14,7 +14,7 @@ export class StoreToolbarComponent implements OnInit {
   constructor(public core : CoreService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    setTimeout( () => this.route.children[0].params.subscribe( (param: any) => this.storeId = +param['id'] ) , 150);
+    setTimeout( () => this.route.children[0].params.subscribe( (param: any) => this.storeId = +param['id'] ) , 500);
 
   }
 
