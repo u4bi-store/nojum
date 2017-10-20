@@ -19,12 +19,6 @@ import { MainInfoComponent } from './pages/main/main-info/main-info.component';
 import { MainFeatureComponent } from './pages/main/main-feature/main-feature.component';
 import { MainFooterComponent } from './pages/main/main-footer/main-footer.component';
 
-import { ResetComponent } from './pages/reset/reset.component';
-
-import { CreateComponent } from './pages/create/create.component';
-
-import { SuccessComponent } from './pages/success/success.component';
-
 import { StoreComponent } from './pages/store/store.component';
 
 import { StoreMainComponent } from './pages/store/store-main/store-main.component';
@@ -52,16 +46,16 @@ const routes : Routes = [
     path : '', component : MainComponent
   },
   {
-    path : 'create', component : CreateComponent
+    path : 'create', loadChildren: './pages/create/create.module#CreateModule'
   },
   {
     path : 'login', loadChildren: './pages/login/login.module#LoginModule'
   },
   {
-    path : 'reset', component : ResetComponent
+    path : 'reset', loadChildren: './pages/reset/reset.module#ResetModule'
   },
   {
-    path : 'success', component : SuccessComponent
+    path : 'success', loadChildren: './pages/success/success.module#SuccessModule'
   },
   {
     path : 'store/:id', component : StoreComponent,
@@ -106,9 +100,6 @@ const routes : Routes = [
     MainInfoComponent,
     MainFeatureComponent,
     MainFooterComponent,
-    ResetComponent,
-    CreateComponent,
-    SuccessComponent,
     StoreComponent,
     StoreMainComponent,
     StoreMainHeaderComponent,
