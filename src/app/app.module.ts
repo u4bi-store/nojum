@@ -7,7 +7,6 @@ import { CoreService } from './providers/core.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './shared/toolbar/toolbar.component';
-import { StoreToolbarComponent } from './shared/store-toolbar/store-toolbar.component';
 
 import {
   MatButtonModule,
@@ -18,8 +17,7 @@ import {
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent,
-    StoreToolbarComponent
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,

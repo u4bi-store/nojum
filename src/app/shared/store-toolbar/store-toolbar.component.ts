@@ -1,6 +1,5 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CoreService } from '../../providers/core.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-store-toolbar',
@@ -9,12 +8,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StoreToolbarComponent implements OnInit {
 
-  public storeId : number;
+  @Input() storeId : number;
 
-  constructor(public core : CoreService, private route: ActivatedRoute) {}
+  constructor(public core : CoreService) {}
 
   ngOnInit() {
-    setTimeout( () => this.route.children[0].params.subscribe( (param: any) => this.storeId = +param['id'] ) , 500);
 
   }
 

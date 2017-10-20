@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { StoreComponent } from './store.component';
+import { StoreToolbarComponent } from '../../shared/store-toolbar/store-toolbar.component';
+
 import { StoreMainComponent } from './store-main/store-main.component';
 import { StoreMainHeaderComponent } from './store-main/store-main-header/store-main-header.component';
 import { StoreMainListComponent } from './store-main/store-main-list/store-main-list.component';
@@ -67,6 +69,7 @@ const routes: Routes = [
   ],
   declarations: [
     StoreComponent,
+    StoreToolbarComponent,
     StoreMainComponent,
     StoreMainHeaderComponent,
     StoreMainListComponent,
