@@ -12,12 +12,6 @@ import { MatButtonModule,
        } from '@angular/material';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-       
-import { MainComponent } from './pages/main/main.component';
-import { MainHeaderComponent } from './pages/main/main-header/main-header.component';
-import { MainInfoComponent } from './pages/main/main-info/main-info.component';
-import { MainFeatureComponent } from './pages/main/main-feature/main-feature.component';
-import { MainFooterComponent } from './pages/main/main-footer/main-footer.component';
 
 import { StoreComponent } from './pages/store/store.component';
 
@@ -43,7 +37,7 @@ import { StoreCartComponent } from './pages/store/store-cart/store-cart.componen
 
 const routes : Routes = [
   {
-    path : '', component : MainComponent
+    path : 'main', loadChildren: './pages/main/main.module#MainModule'
   },
   {
     path : 'create', loadChildren: './pages/create/create.module#CreateModule'
@@ -75,8 +69,8 @@ const routes : Routes = [
         { path:'**',redirectTo:'', pathMatch:'full' }
       ]
   },
-  { path : 'store', redirectTo : '', pathMatch : 'full' },
-  { path:'**',redirectTo:'', pathMatch:'full' }
+  { path : 'store', redirectTo : 'main', pathMatch : 'full' },
+  { path:'**',redirectTo:'main', pathMatch:'full' }
 ];
 
 @NgModule({
@@ -95,11 +89,6 @@ const routes : Routes = [
     MatTabsModule
   ],
   declarations: [
-    MainComponent,
-    MainHeaderComponent,
-    MainInfoComponent,
-    MainFeatureComponent,
-    MainFooterComponent,
     StoreComponent,
     StoreMainComponent,
     StoreMainHeaderComponent,
