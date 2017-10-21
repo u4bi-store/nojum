@@ -44,32 +44,11 @@ label{
     margin-bottom : 20px;
 }
 
-.btn{
-    text-align: center;
-}
-
 .submit{
-    display: inline;
     margin-top: 40px;    
     background: #F9CE00;
     color: #fff;
     font-size: 1.1rem;
     font-weight: 300;
     padding: 10px 10px 10px 10px;
-}
-
-.conntact{
-    width: 65%;
-}
-
-.cart{
-    background : #BABABA; 
-}
-
-@media(min-width: 330px){
-    
-    .conntact{
-        width: 70%;
-    }
-
 }
