@@ -19,7 +19,6 @@ import { StoreDetailMainReviewComponent } from './store-detail/store-detail-main
 import { StoreDetailMainInfoItemComponent } from './store-detail/store-detail-main/store-detail-main-info/store-detail-main-info-item/store-detail-main-info-item.component';
 
 import { StoreDetailBuyComponent } from './store-detail/store-detail-buy/store-detail-buy.component';
-import { StoreOrderComponent } from './store-order/store-order.component';
 
 import { MatButtonModule,
   MatToolbarModule,
@@ -37,7 +36,7 @@ const routes: Routes = [
     path : '', component : StoreComponent,
       children: [
         { path: '', component: StoreMainComponent },
-        { path: 'order', component: StoreOrderComponent },
+        { path: 'order', loadChildren: './store-order/store-order.module#StoreOrderModule' },
         { path: 'detail/:id', component: StoreDetailComponent,
           children : [
             { path: '', component: StoreDetailMainComponent },
@@ -81,8 +80,7 @@ const routes: Routes = [
     StoreDetailMainShareComponent,
     StoreDetailMainReviewComponent,
     StoreDetailMainInfoItemComponent,
-    StoreDetailBuyComponent,
-    StoreOrderComponent
+    StoreDetailBuyComponent
   ],
   exports: [RouterModule]
 })
