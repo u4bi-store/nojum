@@ -26,3 +26,11 @@
     padding: 10px 10px 10px 10px;
     font-weight: 400;
 }
+
+.step-btn:disabled{
+    background: #dddddd;
+}
+
+.invalid{
+    color: #FF0500;
+}
