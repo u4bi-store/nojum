@@ -49,7 +49,7 @@
             </mat-form-field>
 
             <mat-form-field class="field">
-                <input (focus)="focusField='uri' " formControlName="uri" #domain matInput placeholder="주소( {{ domain.value }}.nojum.io )">
+                <input (focus)="focusField='uri' " formControlName="uri" #domain matInput placeholder="주소 nojum.io/store/{{ domain.value }}">
                 
                 <mat-error *ngIf="this.isValid('uri', 'required') || this.isValid('uri', 'pattern')">
                     영소문자 만으로 입력해주세요.
@@ -135,7 +135,7 @@
                 <mat-list-item>
                     <mat-icon mat-list-icon>home</mat-icon>
                     <h4 matLine>스토어주소</h4>
-                    <p *ngIf="createForm.value.uri" matLine>{{ createForm.value.uri }}.nojum.io</p>
+                    <p *ngIf="createForm.value.uri" matLine>nojum.io/store/{{ createForm.value.uri }}</p>
                     <p *ngIf="!createForm.value.uri" class="invalid" matLine>(조건불충족)</p>                    
                 </mat-list-item>
 

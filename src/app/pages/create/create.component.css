@@ -34,3 +34,15 @@
 .invalid{
     color: #FF0500;
 }
+
+:host /deep/ .mat-input-placeholder{
+    color: #4a4a4a !important;
+}
+
+:host /deep/ .mat-input-ripple{
+    background-color: #4a4a4a !important;
+}
+
+mat-error{
+    color: #4a4a4a;    
+}
