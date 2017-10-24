@@ -11,6 +11,7 @@ import { CoreService } from '../../providers/core.service';
 export class CreateComponent implements OnInit {
   
   public createForm: FormGroup;
+  public focusField : string = '';
 
   constructor(public core : CoreService, private formBuilder: FormBuilder) { }
 
@@ -20,20 +21,22 @@ export class CreateComponent implements OnInit {
       type : ['', [
         <any> Validators.required
       ]],
-      store : ['', [
-        <any> Validators.required,
-        <any> Validators.minLength(2),     
-      ]],
-      uri : ['', [
-        <any> Validators.required,
-        <any> Validators.pattern(/^[a-z0-9+]*$/),
-        <any> Validators.minLength(4),
-        <any> Validators.maxLength(12)
-      ]],
       name : ['', [
         <any> Validators.required,
         <any> Validators.pattern(/^[\uac00-\ud7a3]*$/),     
-        <any> Validators.minLength(2)
+        <any> Validators.minLength(2),
+        <any> Validators.maxLength(10),
+      ]],
+      store : ['', [
+        <any> Validators.required,
+        <any> Validators.minLength(2),
+        <any> Validators.maxLength(12)
+      ]],
+      uri : ['', [
+        <any> Validators.required,
+        <any> Validators.minLength(2),
+        <any> Validators.maxLength(12),
+        <any> Validators.pattern(/^[a-z0-9+]*$/)
       ]],
       phone : ['', [
         <any> Validators.required,
@@ -53,4 +56,5 @@ export class CreateComponent implements OnInit {
     
     this.core.onRouter('/success');
   }
+  
 }
