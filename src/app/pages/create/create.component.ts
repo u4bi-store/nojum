@@ -46,15 +46,18 @@ export class CreateComponent implements OnInit {
       facebook : ['', []]
     });
     
-    console.log(this.createForm.value);
   }
 
   isValid = (record : string, value : string) => this.createForm.controls[record]['_errors'] ? this.createForm.controls[record]['_errors'][value] : false;
   
 
-  createStore(){
+  createStore(model: Object, isValid: boolean){
     
-    this.core.onRouter('/success');
+    if(isValid){      
+      alert(JSON.stringify(model));
+      this.core.onRouter('/success');
+    }
+
   }
   
 }
