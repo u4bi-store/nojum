@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { MatStepper } from '@angular/material';
 
 import { CoreService } from '../../providers/core.service';
 
@@ -57,6 +58,13 @@ export class CreateComponent implements OnInit {
       alert(JSON.stringify(model));
       this.core.onRouter('/success');
     }
+
+  }
+
+  onStepper(stepper: MatStepper, index : number, field : any){
+    stepper.selectedIndex = index;
+
+    if(field) setTimeout(()=> field.focus(), 150);
 
   }
   

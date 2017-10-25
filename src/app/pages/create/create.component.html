@@ -2,7 +2,7 @@
     
     <form [formGroup]="createForm" novalidate>
 
-        <mat-vertical-stepper >
+        <mat-vertical-stepper #stepper>
         <mat-step>
             
             <ng-template matStepLabel>유형 선택</ng-template>
@@ -24,7 +24,7 @@
             <ng-template matStepLabel>정보 등록 (필수)</ng-template>
 
             <mat-form-field class="field">
-                <input (focus)="focusField='name' " formControlName="name" matInput placeholder="판매자명">
+                <input #formName (focus)="focusField='name' " formControlName="name" matInput placeholder="판매자명">
                 
                 <mat-error *ngIf="this.isValid('name', 'required') || this.isValid('name', 'pattern')">
                     한글 문장으로만 입력 가능합니다.
@@ -39,7 +39,7 @@
             </mat-form-field>
 
             <mat-form-field class="field">
-                <input (focus)="focusField='store' " formControlName="store" matInput placeholder="스토어명">
+                <input #formStore (focus)="focusField='store' " formControlName="store" matInput placeholder="스토어명">
                 <mat-error *ngIf="this.isValid('name', 'required') || this.isValid('uri', 'minlength') && !this.isValid('uri', 'maxlength')">
                     2자 이상으로 입력해주세요.
                 </mat-error>
@@ -49,7 +49,7 @@
             </mat-form-field>
 
             <mat-form-field class="field">
-                <input (focus)="focusField='uri' " formControlName="uri" #domain matInput placeholder="주소 nojum.io/store/{{ domain.value }}">
+                <input #formUri (focus)="focusField='uri' " formControlName="uri" #domain matInput placeholder="주소 nojum.io/store/{{ domain.value }}">
                 
                 <mat-error *ngIf="this.isValid('uri', 'required') || this.isValid('uri', 'pattern')">
                     영소문자 만으로 입력해주세요.
@@ -86,18 +86,18 @@
             <ng-template matStepLabel>신용 인증</ng-template>
 
             <mat-form-field class="field">
-                <input formControlName="phone" matInput placeholder="연락처(필수)">
-                <mat-error *ngIf="!this.isValid('phone', 'pattern')">
+                <input #formPhone formControlName="phone" matInput placeholder="연락처(필수)">
+                <mat-error *ngIf="this.isValid('name', 'required') || this.isValid('phone', 'pattern')">
                     휴대폰 번호를 입력해주세요 (ex : 010-0000-0000, 01012341234)
                 </mat-error>
             </mat-form-field>
 
             <mat-form-field class="field">
-                <input formControlName="instagram" matInput placeholder="인스타그램">
+                <input #formInstagram formControlName="instagram" matInput placeholder="인스타그램">
             </mat-form-field>
 
             <mat-form-field class="field">
-                <input formControlName="facebook" matInput placeholder="페이스북">
+                <input #formFacebook formControlName="facebook" matInput placeholder="페이스북">
             </mat-form-field>
 
             <button *ngIf="createForm.controls.phone.valid" class="field step-btn" mat-button matStepperNext>다음으로 이동하기</button>         
@@ -111,53 +111,53 @@
 
                 <h3 matSubheader>작성하신 내용이 맞으십니까?</h3>
                 
-                <mat-list-item>
+                <mat-list-item (click)="onStepper(stepper, 0, null)">
                     <mat-icon mat-list-icon>done</mat-icon>
                     <h4 matLine>유형</h4>
                     <p *ngIf="createForm.value.type" matLine>탕수육 {{ createForm.value.type }}</p>
                     <p *ngIf="!createForm.value.type" class="invalid" matLine>(미기입)</p>                    
                 </mat-list-item>
 
-                <mat-list-item>
+                <mat-list-item (click)="onStepper(stepper, 1, formName)">
                     <mat-icon mat-list-icon>assignment_ind</mat-icon>
                     <h4 matLine>판매자명</h4>
                     <p *ngIf="createForm.value.name" matLine>{{ createForm.value.name }}</p>
                     <p *ngIf="!createForm.value.name" class="invalid" matLine>(조건불충족)</p>
                 </mat-list-item>
         
-                <mat-list-item>
+                <mat-list-item (click)="onStepper(stepper, 1, formStore)">
                     <mat-icon mat-list-icon>place</mat-icon>
                     <h4 matLine>스토어명</h4>
                     <p *ngIf="createForm.value.store" matLine>{{ createForm.value.store }}</p>
                     <p *ngIf="!createForm.value.store" class="invalid" matLine>(조건불충족)</p>                    
                 </mat-list-item>
 
-                <mat-list-item>
+                <mat-list-item (click)="onStepper(stepper, 1, formUri)">
                     <mat-icon mat-list-icon>home</mat-icon>
                     <h4 matLine>스토어주소</h4>
                     <p *ngIf="createForm.value.uri" matLine>nojum.io/store/{{ createForm.value.uri }}</p>
                     <p *ngIf="!createForm.value.uri" class="invalid" matLine>(조건불충족)</p>                    
                 </mat-list-item>
 
-                <mat-list-item>
+                <mat-list-item (click)="onStepper(stepper, 2, formPhone)">
                     <mat-icon mat-list-icon>call</mat-icon>
                     <h4 matLine>연락처</h4>
                     <p *ngIf="createForm.value.phone" matLine>{{ createForm.value.phone }} (인증완료)</p>
                     <p *ngIf="!createForm.value.phone" class="invalid" matLine>(조건불충족)</p>
                 </mat-list-item>
 
-                <mat-list-item>
+                <mat-list-item (click)="onStepper(stepper, 2, formInstagram)">
                     <mat-icon mat-list-icon>aspect_ratio</mat-icon>
                     <h4 matLine>인스타그램</h4>
                     <p *ngIf="createForm.value.instagram" matLine>{{ createForm.value.instagram }}</p>
-                    <p *ngIf="!createForm.value.instagram" matLine>(미기입 선택항목)</p>                    
+                    <p *ngIf="!createForm.value.instagram" class="invalid" matLine>(미기입 선택항목)</p>                    
                 </mat-list-item>                                                                                          
 
-                <mat-list-item>
+                <mat-list-item (click)="onStepper(stepper, 2, formFacebook)">
                     <mat-icon mat-list-icon>book</mat-icon>
                     <h4 matLine>페이스북</h4>
                     <p *ngIf="createForm.value.facebook" matLine>{{ createForm.value.facebook }}</p>
-                    <p *ngIf="!createForm.value.facebook" matLine>(미기입 선택항목)</p>                                        
+                    <p *ngIf="!createForm.value.facebook" class="invalid" matLine>(미기입 선택항목)</p>                                        
                 </mat-list-item>
 
             </mat-list>

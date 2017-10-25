@@ -35,6 +35,10 @@
     color: #FF0500;
 }
 
+mat-list-item{
+    cursor: pointer;
+}
+
 :host /deep/ .mat-input-placeholder{
     color: #4a4a4a !important;
 }
