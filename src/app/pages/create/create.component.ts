@@ -1,8 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material';
 
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Subscription } from 'rxjs/Subscription';
+
 import { CoreService } from '../../providers/core.service';
+
+import { FirebasePhoneAuthService } from '../../providers/firebase-phone-auth.service';
 
 @Component({
   selector: 'app-create',
@@ -14,16 +19,53 @@ export class CreateComponent implements OnInit {
   public createForm: FormGroup;
   public focusField : string = '';
   
+  public isRecaptchaPhoneAuth : boolean;
   public isPostPhoneAuth : boolean;
   public isSuccessPhoneAuth : boolean;
 
-  constructor(public core : CoreService, private formBuilder: FormBuilder) {
+  @ViewChild('formPhone')
+  private formPhone : ElementRef;
+
+  @ViewChild('recaptchaElement')
+  private recaptchaElement : ElementRef;
+  public recaptchaVerifier : any;
+  public subscription      : Subscription;
+
+  constructor(
+    public core : CoreService,
+    private firebaseAuth: AngularFireAuth,
+    private phoneAuth : FirebasePhoneAuthService,
+    private formBuilder: FormBuilder
+  ) {
+
+    this.isRecaptchaPhoneAuth = false;
     this.isPostPhoneAuth = false;
     this.isSuccessPhoneAuth = false;
   }
 
   ngOnInit() {
     
+    this.recaptchaVerifier = this.phoneAuth.createRecaptcha(this.recaptchaElement);
+    this.subscription = this.phoneAuth.subscribe( (e) =>{
+      
+      switch(e.type){
+
+        case 'sendLoginCode' :
+          this.isPostPhoneAuth = true;
+          this.formPhone.nativeElement.focus();
+
+          break;
+        case 'verifyLoginCode' :
+          this.isSuccessPhoneAuth = true;
+
+          break;
+
+        default : break;
+
+      }
+
+    });
+
     this.createForm = this.formBuilder.group({
       type : ['', [
         <any> Validators.required
@@ -75,7 +117,8 @@ export class CreateComponent implements OnInit {
   }
   
   postPhoneAuth(){
-    this.isPostPhoneAuth = true;
+    this.isRecaptchaPhoneAuth = true;
+    this.phoneAuth.sendLoginCode('+82' + this.createForm.value.phone, this.recaptchaVerifier);
   }
 
   checkPhoneAuth(){

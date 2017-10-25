@@ -1,7 +1,7 @@
 <div class="wrapper">
-    
-    <form [formGroup]="createForm" novalidate>
 
+    <form [formGroup]="createForm" novalidate>
+        <div #recaptchaElement></div>
         <mat-vertical-stepper #stepper>
         <mat-step>
             
@@ -84,11 +84,11 @@
         </mat-step>
         <mat-step>
             <ng-template matStepLabel>신용 인증</ng-template>
-
-            <mat-form-field *ngIf="!isPostPhoneAuth && !isSuccessPhoneAuth" class="field">                 
+                    
+            <mat-form-field *ngIf="!isPostPhoneAuth && !isSuccessPhoneAuth" class="field">
                 <input #formPhone formControlName="phone" matInput placeholder="연락처(필수)">
-                <button *ngIf="createForm.controls.phone.valid" mat-button class="auth" (click)="postPhoneAuth()">휴대폰 인증</button>
-                <button *ngIf="!createForm.controls.phone.valid" mat-button disabled class="auth">휴대폰 인증</button>                
+                <button *ngIf="!isRecaptchaPhoneAuth && createForm.controls.phone.valid" mat-button class="auth" (click)="postPhoneAuth()">휴대폰 인증</button>
+                <button *ngIf="isRecaptchaPhoneAuth || !createForm.controls.phone.valid" mat-button disabled class="auth">휴대폰 인증</button>                
                 <mat-error *ngIf="this.isValid('name', 'required') || this.isValid('phone', 'pattern')">
                     휴대폰 번호를 입력해주세요 (ex : 010-0000-0000, 01012341234)
                 </mat-error>
