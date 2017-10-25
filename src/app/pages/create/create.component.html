@@ -85,13 +85,25 @@
         <mat-step>
             <ng-template matStepLabel>신용 인증</ng-template>
 
-            <mat-form-field class="field">
+            <mat-form-field *ngIf="!isPostPhoneAuth && !isSuccessPhoneAuth" class="field">                 
                 <input #formPhone formControlName="phone" matInput placeholder="연락처(필수)">
+                <button *ngIf="createForm.controls.phone.valid" mat-button class="auth" (click)="postPhoneAuth()">휴대폰 인증</button>
+                <button *ngIf="!createForm.controls.phone.valid" mat-button disabled class="auth">휴대폰 인증</button>                
                 <mat-error *ngIf="this.isValid('name', 'required') || this.isValid('phone', 'pattern')">
                     휴대폰 번호를 입력해주세요 (ex : 010-0000-0000, 01012341234)
                 </mat-error>
             </mat-form-field>
 
+            <mat-form-field *ngIf="isPostPhoneAuth" class="field">
+                <input matInput placeholder="인증번호">
+                <button mat-button class="auth" (click)="checkPhoneAuth()">인증번호 확인</button>
+            </mat-form-field>
+
+            <mat-form-field *ngIf="isSuccessPhoneAuth" class="field">
+                <button mat-button disabled class="auth">인증 완료</button>                    
+                <input matInput placeholder="인증번호" disabled value="{{ createForm.value.phone }}">
+            </mat-form-field>
+            
             <mat-form-field class="field">
                 <input #formInstagram formControlName="instagram" matInput placeholder="인스타그램">
             </mat-form-field>
@@ -139,10 +151,14 @@
                     <p *ngIf="!createForm.value.uri" class="invalid" matLine>(조건불충족)</p>                    
                 </mat-list-item>
 
-                <mat-list-item (click)="onStepper(stepper, 2, formPhone)">
+                <mat-list-item (click)="onStepper(stepper, 2, null)">
                     <mat-icon mat-list-icon>call</mat-icon>
                     <h4 matLine>연락처</h4>
-                    <p *ngIf="createForm.value.phone" matLine>{{ createForm.value.phone }} (인증완료)</p>
+                    <p *ngIf="createForm.value.phone" matLine>
+                        {{ createForm.value.phone }}
+                        <span *ngIf="isSuccessPhoneAuth">(인증완료)</span>
+                        <span *ngIf="!isSuccessPhoneAuth" class="invalid">(인증필요)</span>
+                    </p>
                     <p *ngIf="!createForm.value.phone" class="invalid" matLine>(조건불충족)</p>
                 </mat-list-item>
 

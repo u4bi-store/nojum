@@ -13,8 +13,14 @@ export class CreateComponent implements OnInit {
   
   public createForm: FormGroup;
   public focusField : string = '';
+  
+  public isPostPhoneAuth : boolean;
+  public isSuccessPhoneAuth : boolean;
 
-  constructor(public core : CoreService, private formBuilder: FormBuilder) { }
+  constructor(public core : CoreService, private formBuilder: FormBuilder) {
+    this.isPostPhoneAuth = false;
+    this.isSuccessPhoneAuth = false;
+  }
 
   ngOnInit() {
     
@@ -63,9 +69,18 @@ export class CreateComponent implements OnInit {
 
   onStepper(stepper: MatStepper, index : number, field : any){
     stepper.selectedIndex = index;
-
+    
     if(field) setTimeout(()=> field.focus(), 150);
 
   }
   
+  postPhoneAuth(){
+    this.isPostPhoneAuth = true;
+  }
+
+  checkPhoneAuth(){
+    this.isPostPhoneAuth = false;
+    this.isSuccessPhoneAuth = true;
+  }
+
 }

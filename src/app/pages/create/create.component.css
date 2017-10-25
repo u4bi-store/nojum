@@ -27,6 +27,17 @@
     font-weight: 400;
 }
 
+.auth{
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: -6px;
+    /* color: #9D9D9D; */
+    color: #F9CE00;
+    font-size: .9rem;
+    font-weight: 400;
+}
+
 .step-btn:disabled{
     background: #dddddd;
 }
