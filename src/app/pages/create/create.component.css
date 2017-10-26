@@ -27,6 +27,11 @@
     font-weight: 400;
 }
 
+.step-btn.success:disabled{
+    color: #fff;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
 .auth{
     position: absolute;
     cursor: pointer;

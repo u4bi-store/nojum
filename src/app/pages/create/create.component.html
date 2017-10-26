@@ -39,7 +39,7 @@
             </mat-form-field>
 
             <mat-form-field class="field">
-                <input #formStore (focus)="focusField='store' " formControlName="store" matInput placeholder="스토어명">
+                <input #formStore (focus)="focusField='store' " formControlName="store" matInput placeholder="노점명">
                 <mat-error *ngIf="this.isValid('name', 'required') || this.isValid('uri', 'minlength') && !this.isValid('uri', 'maxlength')">
                     2자 이상으로 입력해주세요.
                 </mat-error>
@@ -69,15 +69,15 @@
                 <button *ngIf="focusField=== '' " class="field step-btn" mat-button disabled>항목을 모두 채워주세요</button>
                 <div *ngIf="focusField === 'name' ">
                     <button *ngIf="!createForm.controls.name.valid" class="field step-btn" mat-button disabled>한글로만 적어주세요</button>
-                    <button *ngIf="createForm.controls.name.valid" class="field step-btn" mat-button disabled>조건에 충족된 항목입니다</button>
+                    <button *ngIf="createForm.controls.name.valid" class="field step-btn success" mat-button disabled>조건에 충족된 항목입니다</button>
                 </div>
                 <div *ngIf="focusField === 'store' ">
-                    <button *ngIf="!createForm.controls.store.valid" class="field step-btn" mat-button disabled>스토어명은 무엇인가요?</button>
-                    <button *ngIf="createForm.controls.store.valid" class="field step-btn" mat-button disabled>조건에 충족된 항목입니다</button>
+                    <button *ngIf="!createForm.controls.store.valid" class="field step-btn" mat-button disabled>노점의 명칭은 무엇인가요?</button>
+                    <button *ngIf="createForm.controls.store.valid" class="field step-btn success" mat-button disabled>조건에 충족된 항목입니다</button>
                 </div>
                 <div *ngIf="focusField === 'uri' ">
                     <button *ngIf="!createForm.controls.uri.valid" class="field step-btn" mat-button disabled>영소문자 만으로 입력해주세요</button>
-                    <button *ngIf="createForm.controls.uri.valid" class="field step-btn" mat-button disabled>조건에 충족된 항목입니다</button>
+                    <button *ngIf="createForm.controls.uri.valid" class="field step-btn success" mat-button disabled>조건에 충족된 항목입니다</button>
                 </div>
             </div>
 
