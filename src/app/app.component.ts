@@ -13,13 +13,7 @@ export class AppComponent {
   
   constructor(private router: Router){
     
-    this.router.events
-      .filter(event => event instanceof NavigationStart)
-      .subscribe((event:NavigationStart) => {
-
-        if(event.url.length > 7) this.routerUrl = event.url.substring(0, 6);
-      
-      });
+    this.router.events.filter(event => event instanceof NavigationStart).subscribe((event:NavigationStart) => this.routerUrl = event.url.length > 7 ? event.url.substring(0, 6) : event.url);
 
   }
 

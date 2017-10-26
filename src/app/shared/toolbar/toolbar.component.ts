@@ -11,6 +11,7 @@ export class ToolbarComponent implements OnInit {
   constructor(public core : CoreService) { }
 
   ngOnInit() {
+    console.log('toolbar init');
   }
 
 }
