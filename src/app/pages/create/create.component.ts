@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material';
 
@@ -14,7 +14,7 @@ import { FirebasePhoneAuthService } from '../../providers/firebase-phone-auth.se
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css']
 })
-export class CreateComponent implements OnInit {
+export class CreateComponent implements OnInit, OnDestroy {
   
   public createForm: FormGroup;
   public focusField : string = '';
@@ -53,6 +53,7 @@ export class CreateComponent implements OnInit {
         case 'sendLoginCode' :
           this.isPostPhoneAuth = true;
           this.formPhone.nativeElement.focus();
+          this.phoneAuth.removeRecaptcha();
 
           break;
         case 'verifyLoginCode' :
@@ -96,6 +97,11 @@ export class CreateComponent implements OnInit {
     });
     
   }
+
+  ngOnDestroy(){
+    this.phoneAuth.removeRecaptcha();
+  }
+    
 
   isValid = (record : string, value : string) => this.createForm.controls[record]['_errors'] ? this.createForm.controls[record]['_errors'][value] : false;
   
