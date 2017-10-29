@@ -95,7 +95,12 @@ export class FirebasePhoneAuthService {
                 verificationData : e
             });
 
-        }).catch( error => console.error(error));
+        }).catch( error => {
+            this._handler.next({
+                type             : 'verifyLoginCode',
+                verificationData : error
+            });
+        });
     }
 
 }

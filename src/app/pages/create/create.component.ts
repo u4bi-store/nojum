@@ -47,7 +47,7 @@ export class CreateComponent implements OnInit, OnDestroy {
     
     this.recaptchaVerifier = this.phoneAuth.createRecaptcha(this.recaptchaElement);
     this.subscription = this.phoneAuth.subscribe( (e) =>{
-      
+
       switch(e.type){
 
         case 'sendLoginCode' :
@@ -57,6 +57,8 @@ export class CreateComponent implements OnInit, OnDestroy {
 
           break;
         case 'verifyLoginCode' :
+          if(e.verificationData.code) return alert('인증번호가 틀립니다.');
+          this.isPostPhoneAuth = false;
           this.isSuccessPhoneAuth = true;
 
           break;
@@ -127,9 +129,8 @@ export class CreateComponent implements OnInit, OnDestroy {
     this.phoneAuth.sendLoginCode('+82' + this.createForm.value.phone, this.recaptchaVerifier);
   }
 
-  checkPhoneAuth(){
-    this.isPostPhoneAuth = false;
-    this.isSuccessPhoneAuth = true;
+  checkPhoneAuth(e){
+    this.phoneAuth.verifyLoginCode(e);
   }
 
 }

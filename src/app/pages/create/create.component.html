@@ -95,8 +95,8 @@
             </mat-form-field>
 
             <mat-form-field *ngIf="isPostPhoneAuth" class="field">
-                <input matInput placeholder="인증번호">
-                <button mat-button class="auth" (click)="checkPhoneAuth()">인증번호 확인</button>
+                <input #formVerify matInput placeholder="인증번호">
+                <button mat-button class="auth" (click)="checkPhoneAuth(formVerify.value)">인증번호 확인</button>
             </mat-form-field>
 
             <mat-form-field *ngIf="isSuccessPhoneAuth" class="field">
