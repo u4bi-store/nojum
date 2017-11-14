@@ -3,7 +3,10 @@
       <div class="demo-one" (mouseenter) ="listHover(true)" (mouseleave) ="listHover(false)" drag-scroll drag-scroll-disabled="true" scrollbar-hidden="true" snap-disabled="true" (reachesLeftBound)="leftBoundStat($event)" (reachesRightBound)="rightBoundStat($event)" #nav>
           <div class="box" *ngFor="let image of imagelist let i = index">
                 
-                <div class="content" (click)=" this.core.onRouter('/store/'+(i+1) )">
+                <div class="content-shadow" (click)=" this.core.onRouter('/store/'+(i+1) )">
+                    <h3>{{ i }}번 테스트스토어</h3>
+                </div>
+                <div class="content">
                     <div class="content-img"></div>
 
                 </div>

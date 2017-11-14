@@ -35,11 +35,34 @@
     background: #fff;
     box-shadow: 0 .5px .5px #DDDDDD, 0 0 .5px #DDDDDD;
     text-align: left;
-    cursor: pointer;
 }
 
 .content-img{
     background-color: #DDDDDD;
     border-bottom: 1px solid #DDDDDD;
     height: 60%;
+}
+
+.content-shadow{
+    margin:auto;
+    align-self: center;
+    position: relative;
+    width : 92%;
+    height: 0;
+    border: .1px solid #DDDDDD;
+    color: #4A4A4A;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: height .5s;
+       -moz-transition: height .5s;
+            transition: height .5s;
+}
+
+.content-shadow h3{
+    margin-top: 45%;
+}
+
+.box:hover .content-shadow{
+    height: 92%;
+    background-color: rgba(0, 0, 0, 0.1);
 }
